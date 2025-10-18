@@ -1,10 +1,7 @@
 \documentclass[11pt]{article}
 
-%% Load babel with the chosen language.
-\def\documentlanguage{portuguese}
-\usepackage[\documentlanguage]{babel}
-
-% Other packages.
+% Package imports.
+\usepackage[english]{babel}
 \usepackage[sfdefault]{biolinum}
 \usepackage{etoolbox}
 \usepackage{fontawesome5}
@@ -14,28 +11,13 @@
 \usepackage[utf8]{inputenc}
 \usepackage{titling}
 \usepackage{ifthen}
+\usepackage{tabularx}
 
 % Miscellaneous document setup.
 \setlength{\parindent}{0pt}
 \pagenumbering{gobble}
 
-% Generic bilingual command.
-\newcommand{\lang}[2]{%
-    \ifthenelse{\equal{\documentlanguage}{english}}{#2}{#1}%
-    \unskip
-}
-
-\robustify{\lang} % Ensures \lang works well in all contexts
-
 % Helper commands.
-\newcommand{\cvtitle}[2]{
-    \pretitle{\begin{flushleft}}
-    \title{\huge \textbf{#1} \hfill \normalsize #2}
-    \author{}
-    \date{}
-    \posttitle{\par\end{flushleft}\hrule\vspace{-0.75in}}
-}
-
 \newcommand{\contactinfo}[3]{
     \faIcon{#1} \href{#2://#3}{#3}
 }
@@ -44,7 +26,7 @@
     \faIcon{#1} {#2}
 }
 
-\newcommand{\skillclass}[2]{
+\newcommand{\skillgroup}[2]{
     \textbf{#1:} & #2
 }
 
@@ -52,13 +34,18 @@
     \subsection*{#1 \hfill \normalfont{#2}}
 }
 
-% Document content.
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{2.5ex}{1.64ex}
+\titlespacing*{\subsection}{0pt}{2ex}{1ex}
+
 \begin{document}
 
 %% Header: name, job title and contact info.
-\cvtitle{Bernardo Barzotto Zomer}{\lang{Engenheiro de Observabilidade}{Observability Engineer}}
-\setlength{\droptitle}{-0.75in}
-\maketitle
+\begin{flushleft}
+{\huge \bfseries Bernardo Barzotto Zomer}
+\end{flushleft}
+\hrule
+\vspace{1em}
 
 \begin{tabular}{ l l }
     \contactinfo{envelope-square}{mailto}{bernardobarzottoz@gmail.com} &
@@ -69,67 +56,45 @@
     \otherinfo{map-marker-alt}{Porto Alegre, RS, Brasil} \\
 \end{tabular}
 
-%% Body 
-\section*{\lang{Competências}{Skills}}
+\vspace{1em}
+
+Mid-level Observability Engineer with 2+ years of experience building data visualization solutions, designing data architectures, and leading cross-functional projects at Dell Technologies. Skilled in Grafana, SQL and NoSQL databases, Docker, and Python. Proven record of developing scalable monitoring solutions, and working with engineers to deliver reliable, high-performance data systems.
+
+%% Body
+
+\section*{Skills}
 
 \begin{tabular}{ l l }
-    \skillclass{\lang{Ferramentas}{Tools}}{Grafana, Docker, Terraform, Ansible, Git, GitHub;} \\
-    \skillclass{\lang{Bancos de dados}{Databases}}{Prometheus, InfluxDB, SQL Server, MySQL, PostgreSQL, MongoDB;} \\
-    \skillclass{\lang{Linguagens}{Programming}}{Python, Rust, Java, C, C++, Shell, SQL;} \\
-    \skillclass{\lang{Idiomas}{Languages}}
-        {\lang{Inglês fluente (apto a leitura, escrita e conversas técnicas), Português nativo.}
-        {Fluent in English (reading, writing, technical conversations), native Portuguese.}} \\
+    \skillgroup{Tools}{Grafana, Docker, Terraform, Ansible, Git, GitHub;} \\
+    \skillgroup{Databases}{Prometheus, InfluxDB, SQL Server, MySQL, PostgreSQL, MongoDB;} \\
+    \skillgroup{Programming}{Python, Rust, Java, C, C++, Shell, SQL;} \\
+    \skillgroup{Languages}{Fluent in English (technical and non-technical audiences), native Portuguese.} \\
 \end{tabular}
 
-\section*{\lang{Experiência}{Experience}}
+\section*{Professional Experience}
 
-\experience{Dell Technologies}
-    {\lang{Engenheiro de Observabilidade}{Observability Engineer}}
+\experience{Dell Technologies}{Observability Engineer}
+\emph{08/2023 to 02/2025 (Software Engineer I), 02/2025 to present (Software Engineer II).}
 
-\emph{\lang{08/2023 a 02/2025 (Engenheiro de Software I), 02/2025 até o presente (Engenheiro de Software II).}
-    {08/2023 to 02/2025 (Software Engineer I), 02/2025 to present (Software Engineer II).}}
+Designed and optimized real-time data pipelines integrating Prometheus, InfluxDB, Splunk and SQL databases in Grafana dashboards as part of the CLCA process, enabling proactive incident detection and reducing P1 incident response times. Set up synthetic network tests and alerts, enabling a new dimension of analysis for root cause evaluation. Automated infrastructure workflows with Python and Flask. Led multi-team initiatives to redesign data architectures, reporting directly to VP stakeholders.
 
-\lang{
-    Desenvolvimento de dashboards no Grafana para aumentar a proatividade de times de SRE. Correlação de métricas (Prometheus, InfluxDB) com databases SQL. Desenvolvimento de testes sintéticos e alertas. Colaboração com times de engenharia de dados para expandir a cobertura do monitoramento. Desenvolvimento de soluções para incidentes P1 e avaliação das ferramentas oferecidas com base em incidentes passados. Automação de processos de infraestrutura F5 com Python e Flask.
-}{
-    Development of dashboards in Grafana to boost SRE team proactivity. Correlation of metrics (Prometheus, InfluxDB) with SQL databases. Creation of synthetic tests and alerts. Collaboration with data engineering teams to expand monitoring coverage. Development of solutions for P1 incidents and evaluation of tools based on past incidents. Automation of F5 infrastructure processes with Python and Flask.
-}
+\experience{PUCRS/Dell IT Infra Residency}{Intern}
+\emph{04/2023 to 08/2023.}
 
-\experience{\lang{PUCRS/Dell IT Infra Residency}{PUCRS/Dell IT Infra Residency}}
-    {\lang{Estágio}{Internship}}
+IT infrastructure residency through an immersive training program and technical qualification. Developed an Infrastructure as Code (IaC) project by provisioning infrastructure on AWS using Terraform and Ansible, incorporating redundant NoSQL MongoDB databases and S3 buckets for video data streaming. Database monitoring with Grafana and Prometheus.
 
-\emph{\lang{04/2023 a 08/2023.}{04/2023 to 08/2023.}}
+\experience{Parallel Applications Modelling Group (GMAP)}{Undergraduate Researcher}
 
-\lang{
-    Residência em infraestrutura de TI através de um treinamento imersivo e capacitação técnica com ênfase no estudo, planejamento e desenvolvimento de processos de automação. Realização de um projeto de IaC com provisionamento de infraestrutura na AWS por meio de Terraform e Ansible, com bancos de dados NoSQL MongoDB com redundância (replicação e sharding) e streaming de dados de vídeo. Monitoramento dos bancos de dados com Grafana e Prometheus.
-}{
-    IT infrastructure residency through an immersive training program and technical qualification, with an emphasis on studying, planning, and developing automation processes. Developed an Infrastructure as Code (IaC) project by provisioning infrastructure on AWS using Terraform and Ansible, incorporating NoSQL MongoDB databases with redundancy (replication and sharding) and video data streaming. Database monitoring with Grafana and Prometheus.
-}
+\emph{10/2022 to 04/2023.}
 
-\experience{\lang{Grupo de Modelagem de Aplicações Paralelas (GMAP)}{Parallel Applications Modelling Group (GMAP)}}
-    {\lang{Bolsa de Iniciação Científica}{Undergraduate Researcher}}
+Worked on parallelizing the NAS Parallel Benchmarks (NPB) using OpenMP and OneTBB (C++), converting the NPB EP kernel to Rust, and parallelizing streaming applications.
 
-\emph{\lang{10/2022 a 04/2023.}{10/2022 to 04/2023.}}
+\section*{Other Qualifications}
 
-\lang{
-    Atuação como pesquisador na área de programação paralela e distribuída, com foco em computação de alto desempenho, avaliação de algoritmos, otimização de soluções e ciência de dados. Paralelização do NAS Parallel Benchmarks (NPB) com OpenMP e OneTBB (C++), conversão do kernel EP do NPB para Rust e paralelização de aplicações de streaming.
-}{
-    Research experience in the field of parallel and distributed programming, focusing on high-performance computing, algorithm evaluation, solution optimization, and data science. Worked on parallelizing the NAS Parallel Benchmarks (NPB) using OpenMP and OneTBB (C++), converting the NPB EP kernel to Rust, and parallelizing streaming applications.
-}
+Club president (10+ members) of Dell Toastmasters Brazil, coaching peers on public communication and leadership skills since 07/2025. \href{https://www.credly.com/badges/69bb404e-ae99-4a93-96b1-228fa98d0859/public_url}{AWS Academy Graduate - Introduction to Cloud Semester 1}.
 
-\section*{\lang{Certificados}{Certificates}}
+\section*{Education}
 
-\begin{itemize}
-	\item \href{https://www.credly.com/badges/69bb404e-ae99-4a93-96b1-228fa98d0859/public_url}
-        {AWS Academy Graduate - AWS Academy Introduction to Cloud Semester 1}
-\end{itemize}
-
-\section*{\lang{Formação}{Education}}
-
-\lang{
-    Bacharelado em \textbf{Ciência da Computação} pela Pontifícia Universidade Católica do Rio Grande do Sul (\textbf{PUCRS}), 2021-2025.
-}{
-    Bachelor's in \textbf{Computer Science} at Pontifical Catholic University of Rio Grande do Sul (\textbf{PUCRS}), 2021-2025.
-}
+\textbf{B.Sc. Computer Science}, Pontifícia Universidade Católica do Rio Grande do Sul (\textbf{PUCRS}), 2021 to 2025.
 
 \end{document}
