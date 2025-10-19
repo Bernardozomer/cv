@@ -2,7 +2,7 @@
 
 A small repository that stores the source for my CV as a TeX document and publishes compiled PDFs via GitHub Actions.
 
-## Find my CV [HERE](https://github.com/Bernardozomer/cv/releases/latest/download/Bernardo%20Barzotto%20Zomer.pdf)
+## Find my CV [HERE](https://github.com/Bernardozomer/cv/releases/latest/download/Bernardo.Barzotto.Zomer.pdf)
 
 You can also access Releases from this repository's GitHub UI by clicking "Releases" in the sidebar or the "Releases" link under the repository name.
 
