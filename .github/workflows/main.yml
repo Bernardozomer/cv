@@ -15,3 +15,8 @@ jobs:
         with:
           name: cv
           path: cv.pdf
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        if: github.ref_type == 'tag'
+        with:
+          files: cv.pdf
