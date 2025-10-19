@@ -20,3 +20,5 @@ jobs:
         if: github.ref_type == 'tag'
         with:
           files: cv.pdf
+          generate_release_notes: true
+          make_latest: true
