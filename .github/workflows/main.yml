@@ -10,15 +10,18 @@ jobs:
         uses: xu-cheng/latex-action@v4
         with:
           root_file: cv.tex
+      - name: Rename PDF file
+        run: mv cv.pdf "Bernardo Barzotto Zomer.pdf"
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
         with:
-          name: cv
-          path: cv.pdf
+          name: Bernardo Barzotto Zomer
+          path: "Bernardo Barzotto Zomer.pdf"
       - name: Release
         uses: softprops/action-gh-release@v2
         if: github.ref_type == 'tag'
         with:
-          files: cv.pdf
+          files: "Bernardo Barzotto Zomer.pdf"
+          body_path: CHANGELOG.txt
           generate_release_notes: true
           make_latest: true
