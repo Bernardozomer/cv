@@ -30,8 +30,11 @@
     \textbf{#1:} & #2
 }
 
-\newcommand{\experience}[2]{
-    \subsection*{#1 \hfill \normalfont{#2}}
+\newcommand{\experience}[4]{%
+    \subsection*{#1 \hfill \normalfont{#2}}%
+    \par
+    \textit{#3}\par
+    #4
 }
 
 \usepackage{titlesec}
@@ -58,7 +61,11 @@
 
 \vspace{1em}
 
-Mid-level Observability Engineer with 2+ years of experience building data visualization solutions, designing data architectures, and leading cross-functional projects at Dell Technologies. Skilled in Grafana, SQL and NoSQL databases, Docker, and Python. Proven record of developing scalable monitoring solutions, and working with engineers to deliver reliable, high-performance data systems.
+Mid-level Observability Engineer with 2+ years of experience building data visualization solutions, 
+designing data architectures, and leading cross-functional projects at Dell Technologies. 
+Skilled in Grafana, SQL and NoSQL databases, Docker, and Python. 
+Proven record of developing scalable monitoring solutions, and working with engineers to deliver reliable, 
+high-performance data systems.
 
 %% Body
 
@@ -73,25 +80,30 @@ Mid-level Observability Engineer with 2+ years of experience building data visua
 
 \section*{Professional Experience}
 
-\experience{Dell Technologies}{Observability Engineer}
-\emph{08/2023 to 02/2025 (Software Engineer I), 02/2025 to present (Software Engineer II).}
+\experience{Dell Technologies}{Observability Engineer}{08/2023 to 02/2025 (Software Engineer I), 02/2025 to present (Software Engineer II).}{
+    Designed and optimized real-time data pipelines integrating Prometheus, InfluxDB, Splunk and SQL databases
+    in Grafana dashboards as part of the CLCA process, enabling proactive incident detection and reducing 
+    P1 incident response times. Set up synthetic network tests and alerts, enabling a new dimension of analysis
+    for root cause evaluation. Automated infrastructure workflows with Python and Flask. Led multi-team 
+    initiatives to redesign data architectures, reporting directly to VP stakeholders.
+}
 
-Designed and optimized real-time data pipelines integrating Prometheus, InfluxDB, Splunk and SQL databases in Grafana dashboards as part of the CLCA process, enabling proactive incident detection and reducing P1 incident response times. Set up synthetic network tests and alerts, enabling a new dimension of analysis for root cause evaluation. Automated infrastructure workflows with Python and Flask. Led multi-team initiatives to redesign data architectures, reporting directly to VP stakeholders.
+\experience{PUCRS/Dell IT Infra Residency}{Intern}{04/2023 to 08/2023.}{
+    IT infrastructure residency through an immersive training program and technical qualification. 
+    Developed an Infrastructure as Code (IaC) project by provisioning infrastructure on AWS using Terraform 
+    and Ansible, incorporating redundant NoSQL MongoDB databases and S3 buckets for video data streaming. 
+    Database monitoring with Grafana and Prometheus.
+}
 
-\experience{PUCRS/Dell IT Infra Residency}{Intern}
-\emph{04/2023 to 08/2023.}
-
-IT infrastructure residency through an immersive training program and technical qualification. Developed an Infrastructure as Code (IaC) project by provisioning infrastructure on AWS using Terraform and Ansible, incorporating redundant NoSQL MongoDB databases and S3 buckets for video data streaming. Database monitoring with Grafana and Prometheus.
-
-\experience{Parallel Applications Modelling Group (GMAP)}{Undergraduate Researcher}
-
-\emph{10/2022 to 04/2023.}
-
-Worked on parallelizing the NAS Parallel Benchmarks (NPB) using OpenMP and OneTBB (C++), converting the NPB EP kernel to Rust, and parallelizing streaming applications.
+\experience{Parallel Applications Modelling Group (GMAP)}{Undergraduate Researcher}{10/2022 to 04/2023.}{
+    Worked on parallelizing the NAS Parallel Benchmarks (NPB) using OpenMP and OneTBB (C++), converting the 
+    NPB EP kernel to Rust, and parallelizing streaming applications.
+}
 
 \section*{Other Qualifications}
 
-Club president (10+ members) of Dell Toastmasters Brazil, coaching peers on public communication and leadership skills since 07/2025. \href{https://www.credly.com/badges/69bb404e-ae99-4a93-96b1-228fa98d0859/public_url}{AWS Academy Graduate - Introduction to Cloud Semester 1}.
+Club president (10+ members) of Dell Toastmasters Brazil, coaching peers on public communication and leadership skills since 07/2025. 
+\href{https://www.credly.com/badges/69bb404e-ae99-4a93-96b1-228fa98d0859/public_url}{AWS Academy Graduate - Introduction to Cloud Semester 1}.
 
 \section*{Education}
 
