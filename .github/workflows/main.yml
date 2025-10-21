@@ -1,5 +1,12 @@
 name: Build and upload PDF file from LaTeX document
-on: [push]
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - '*'
+  pull_request: {}
+
 jobs:
   build-latex:
     runs-on: ubuntu-latest
@@ -18,8 +25,8 @@ jobs:
           name: Bernardo Barzotto Zomer
           path: "Bernardo Barzotto Zomer.pdf"
       - name: Release
+        if: github.event_name == 'push' && github.ref_type == 'tag'
         uses: softprops/action-gh-release@v2
-        if: github.ref_type == 'tag'
         with:
           files: "Bernardo Barzotto Zomer.pdf"
           body_path: CHANGELOG.txt
