@@ -1,1 +1,1 @@
-Actions now run only on PRs or when a tag is pushed to master.
+Refactored one LaTeX command for cleaner code.

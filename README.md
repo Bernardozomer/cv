@@ -9,5 +9,5 @@ You can also access Releases from this repository's GitHub UI by clicking "Relea
 ## What this repo provides
 
 - TeX source for the CV (root TeX file in the repository).
-- Automated CI: a GitHub Actions workflow compiles the PDF and attaches it to a release when a PR is made or a new tag is pushed to master.
+- Automated CI: a GitHub Actions workflow compiles the PDF and attaches it to a release.
 - `CHANGELOG.txt` with release notes for the most recent version.
